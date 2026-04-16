@@ -71,3 +71,6 @@ typst-author-chinese/
 ## 致谢
 
 本项目基于 [typst-skills](https://github.com/apcamargo/typst-skills) 改编，增加了中文排版适配。
+
+### Issue #1: 优化 SKILL.md
+Tracked via GitHub issue.
