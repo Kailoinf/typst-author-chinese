@@ -1,0 +1,18 @@
+{
+  "name": "typst-author",
+  "version": "1.0.0",
+  "description": "Typst 中文排版 SKILL。This is an agent skill designed for the purpose of authoring documents utilising native Chinese typography. ",
+  "author": {
+    "name": "Gakusyun",
+    "url": "https://www.gkux.cn"
+  },
+  "repository": "https://github.com/Gakusyun/typst-author-chinese",
+  "license": "MIT",
+  "keywords": [
+    "typst",
+    "chinese",
+    "typography",
+    "document",
+    "pdf"
+  ]
+}
