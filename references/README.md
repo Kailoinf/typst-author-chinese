@@ -17,7 +17,7 @@
 | 文件 | 主题 |
 |------|------|
 | [underline.md](underline.md) | 中英文下划线错位修复、空白下划线、波浪线 |
-| [heading-numbering.md](heading-numbering.md) | 标题编号格式、numbly 包、中文数字编号、嵌套样式 |
+| [heading-numbering.md](heading-numbering.md) | 标题编号格式、内置 numbering 模式、中文数字编号、嵌套样式 |
 
 ## 完整模板
 
