@@ -42,13 +42,19 @@ description: 生成符合中文排版习惯的 Typst（.typ）代码，编辑、
 
 | 文件 | 主题 |
 |------|------|
-| [font](references/font.md) | 中英文字体分设、伪粗体、楷体代斜体、代码块/公式中文 |
+| [font](references/font.md) | 中英文字体分设、伪粗体、楷体代斜体、代码块/公式中文、引号、回退异常 |
 | [font-size](references/font-size.md) | 中文字号号数制、磅值对照、pointless-size |
 | [margins](references/margins.md) | A4 边距（通用/装订/国标/文艺） |
-| [spacing](references/spacing.md) | 行距、段距、对齐、行内公式间距 |
-| [first-line-indent](references/first-line-indent.md) | 首行缩进、`all: true` |
+| [spacing](references/spacing.md) | 行距、段距、对齐、行内公式间距、Word 行距换算、分散对齐 |
+| [first-line-indent](references/first-line-indent.md) | 首行缩进、`all: true`、块级元素后不缩进 |
 | [underline](references/underline.md) | 中英文下划线错位、空白下划线、波浪线 |
-| [heading-numbering](references/heading-numbering.md) | 标题编号 |
+| [heading-numbering](references/heading-numbering.md) | 标题编号、多级不同格式、编号后空格、从零开始、变体标题 |
+| [table](references/table.md) | 基本语法、三线表、续表、斜线表头、圆角、自动列宽、数组转置 |
+| [math](references/math.md) | 行内/行间、公式编号、中文公式字体、分隔符、cases、矩阵、化学式、符号 |
+| [figure](references/figure.md) | 图片插入、子图、双语 caption、PDF 页面 |
+| [page](references/page.md) | 页码格式、奇偶页、多文件项目、目录、脚注问题 |
+| [list](references/list.md) | 无序/有序列表、编号宽度控制、粗体斜体嵌套 |
+| [bibliography](references/bibliography.md) | 基本引用、内联文献、CSL 样式、上标编号、缺失引用处理 |
 | [templates](references/templates.md) | 论文/办公/公文 3 套模板 |
 
 ## 中文排版核心要点
