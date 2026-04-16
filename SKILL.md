@@ -48,7 +48,7 @@ description: 生成符合中文排版习惯的 Typst（.typ）代码，编辑、
 | [spacing](references/spacing.md) | 行距、段距、对齐、行内公式间距 |
 | [first-line-indent](references/first-line-indent.md) | 首行缩进、`all: true` |
 | [underline](references/underline.md) | 中英文下划线错位、空白下划线、波浪线 |
-| [heading-numbering](references/heading-numbering.md) | 标题编号、numbly |
+| [heading-numbering](references/heading-numbering.md) | 标题编号 |
 | [templates](references/templates.md) | 论文/办公/公文 3 套模板 |
 
 ## 中文排版核心要点
