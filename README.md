@@ -55,18 +55,17 @@ typst-author-chinese/
 │   ├── tutorial/         # 教程
 │   ├── guides/           # 指南（页面设置、表格等）
 │   └── reference/        # API 参考
-├── references/           # 中文排版参考（可编辑）
-│   ├── font.md           # 字体配置
-│   ├── spacing.md        # 行距段距
-│   ├── first-line-indent.md
-│   ├── heading-numbering.md
-│   ├── table.md
-│   ├── math.md
-│   ├── figure.md
-│   ├── page.md
-│   ├── list.md
-│   └── bibliography.md
-└── guide-master/          # 本地参考（gitignored）
+└── references/           # 中文排版参考（可编辑）
+    ├── font.md           # 字体配置
+    ├── spacing.md        # 行距段距
+    ├── first-line-indent.md
+    ├── heading-numbering.md
+    ├── table.md
+    ├── math.md
+    ├── figure.md
+    ├── page.md
+    ├── list.md
+    └── bibliography.md
 ```
 
 ## 致谢
