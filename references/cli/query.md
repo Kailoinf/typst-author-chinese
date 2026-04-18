@@ -22,8 +22,17 @@ typst query [OPTIONS] <INPUT> <SELECTOR>
 | `--format <json\|yaml>` | 输出格式（默认 json） |
 | `--pretty` | 美化输出（仅 JSON） |
 | `--target <paged\|html>` | 编译目标（默认 paged） |
-
-其余通用选项（`--root`、`--input`、`--font-path`、`--ignore-system-fonts`、`--package-path` 等）与 [compile](compile.md) 相同。
+| `--root <DIR>` | 项目根目录（用于绝对路径解析）[env: TYPST_ROOT=] |
+| `--input <key=value>` | 传入键值对，代码中通过 `sys.inputs` 访问 |
+| `--font-path <DIR>` | 额外字体搜索目录（Windows 用 `;` 分隔，Unix 用 `:`）[env: TYPST_FONT_PATHS=] |
+| `--ignore-system-fonts` | 不搜索系统字体 [env: TYPST_IGNORE_SYSTEM_FONTS=] |
+| `--ignore-embedded-fonts` | 不使用 Typst 内嵌字体 [env: TYPST_IGNORE_EMBEDDED_FONTS=] |
+| `--package-path <DIR>` | 本地包路径 [env: TYPST_PACKAGE_PATH=] |
+| `--package-cache-path <DIR>` | 包缓存路径 [env: TYPST_PACKAGE_CACHE_PATH=] |
+| `--creation-timestamp <UNIX>` | 文档创建时间戳 [env: SOURCE_DATE_EPOCH=] |
+| `-j, --jobs <N>` | 并行编译线程数，默认等于 CPU 核心数，`1` 禁用并行 |
+| `--features <FEATURES>` | 启用实验性功能 [env: TYPST_FEATURES=]，可选：`html`, `a11y-extras` |
+| `--diagnostic-format <human\|short>` | 诊断信息格式（默认 human） |
 
 ## 常用示例
 
