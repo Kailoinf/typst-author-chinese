@@ -3,7 +3,10 @@ name: typst-author-chinese
 description: 生成符合中文排版习惯的 Typst（.typ）代码，编辑、调试 Typst 文档与项目，回答 Typst 语法与参考问题。当用户处理 .typ 文件、涉及 Typst 文档创建/编辑/调试/编译/格式化/模板/包的使用，或者涉及中文排版、中文学术论文、中文书籍排版、CTeX 替代、中文字体配置、中文标点处理等场景时，均应使用本 skill。也适用于任何 Typst 语法参考和项目构建需求。即使用户没有明确提到 Typst，当提到"中文论文排版"、"中文字体配置"、"首行缩进"、"标点挤压"等关键词，也应使用本 skill。
 ---
 
-# typst-author skill（中文排版适配版）
+# typst-author-chinese skill
+
+**本文件只包含了Typst的最基本操作，请按需阅读文Skill中的其他文件**
+**其他文件优先级：references > docs，references是常见问题，精但少，docs是Typst官方文档，浪费Token）**
 
 ## 最小中文文档
 
@@ -22,7 +25,7 @@ description: 生成符合中文排版习惯的 Typst（.typ）代码，编辑、
 ```
 
 ## 工作流程
-
+0. **确认版本**: 使用`typst --version`确认 Typst 是否安装并确认版本号
 1. **新手入门**：使用最小中文文档模板，阅读 [docs/tutorial/writing-in-typst.md](docs/tutorial/writing-in-typst.md) 入门
 2. **语法熟悉**：对照 [docs/reference/syntax.md](docs/reference/syntax.md) 和 [docs/reference/scripting.md](docs/reference/scripting.md) 确认语法
 3. **样式配置**：参考 [docs/reference/styling.md](docs/reference/styling.md) 完成全局样式，参考 [docs/guides/page-setup.md](docs/guides/page-setup.md) 调整页面设置
@@ -89,13 +92,15 @@ echo '#metadata(1 + 2) <probe>' | typst query - "<probe>" --field value --one
 - `**双星号**` 加粗（Typst 用 `*单星号*`）
 - 中文标点在语法结构中（术语列表 `/ 术语：描述` 的 `：` 应为 `:`）
 - `prod`（不存在的符号，应用 `product`）
-- `#show par: set block(spacing: ..)`（已废弃，用 `#set par(spacing: ..)`）
 - 猜测字体名而不执行 `typst fonts` 验证
 - 忘记 `lang: "zh"` 或 `first-line-indent: (amount: 2em, all: true)`
+- Typst中没有`---`作为分隔线
+- 导入第三方包使用`#import "@preview/pointless-size:0.1.2": zh, zihao`
+- `(name: "Times New Roman", covers: "latin-in-cjk")`中，只接受一个字体，不接受数组。
 
 ## 高级功能
 
-- 文档标题：`#title[标题]`（Typst 0.12+）
+- 文档标题：`#title[标题]`
 - 上下文：`context { ... }` — 页眉页脚、计数器
 - 目录：`#outline(title: [目录], indent: auto)`
 - 日期：`datetime.today().display("[year]年[month]月[day]日")`
