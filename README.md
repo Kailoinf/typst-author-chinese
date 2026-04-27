@@ -67,3 +67,4 @@ typst-author-chinese/
 ## 致谢
 
 本项目基于 [typst-skills](https://github.com/apcamargo/typst-skills) 改编，增加了中文排版适配。
+\n\n> Automatically updated by apply_fix.sh for issue #13 (2026-04-27 12:06:51)
