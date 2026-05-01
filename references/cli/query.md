@@ -49,6 +49,6 @@ typst query doc.typ "<my-label>"
 # YAML 格式输出
 typst query doc.typ "<heading>" --format yaml --pretty
 
-# 提取 figure 的 count 字段
-typst query doc.typ "<figure>" --field count --one
+# 提取 figure 的 caption
+typst query doc.typ "<figure>" --field caption --one
 ```

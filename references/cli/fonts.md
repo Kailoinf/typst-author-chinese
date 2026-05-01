@@ -28,5 +28,5 @@ typst fonts --ignore-system-fonts --font-path ./fonts
 typst fonts --variants
 
 # 检查特定字体是否存在（配合 grep）
-typst fonts | find "SimSun"
+typst fonts | grep "SimSun"
 ```

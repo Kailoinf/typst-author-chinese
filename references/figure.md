@@ -9,7 +9,7 @@
 )
 ```
 
-`width` 和 `height` 可选，只设一个时按比例缩放。Typst 只支持本地图片。
+`width` 和 `height` 可选，只设一个时按比例缩放。Typst 支持本地图片文件和 raw bytes，不支持 HTTP URL 直接引用。可用 `image.decode()` 从字符串解码图片。支持格式：png、jpg、gif、svg、pdf、webp。
 
 ## 子图
 

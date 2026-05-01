@@ -12,11 +12,12 @@
   [数据21], [数据22], [数据23],
 )
 ```
-- Key:
-- columns: 列数或带单位的宽度表达式，例如 `(1fr, 1fr, 1fr)`，也可书写 3 表示三列。
-- table.header(): 第一行为表头。
+**关键参数：**
+- `columns`：列数或带单位的宽度表达式，例如 `(1fr, 1fr, 1fr)`，也可写 `3` 表示三列。
+- `table.header()`：第一行为表头。
 - 行数据按列顺序写入，每个单元格用逗号分隔。
-⚠️ 提示：需要跨列或跨行时，可使用 table.cell(colspan: n, …) / table.cell(rowspan: n, …) 等参数。
+
+⚠️ 需要跨列或跨行时，可使用 `table.cell(colspan: n, …)` / `table.cell(rowspan: n, …)` 等参数。
 
 ## 三线表
 问题：在中文学术论文中，常用的三线表风格，通过隐藏边框并仅用横线完成。
@@ -62,7 +63,7 @@
 - 说明：通过状态控制续表提示的显示与隐藏。
 
 ## 斜线表头
-问题：表头单元格绘制对角线以分割信息。
+表头单元格绘制对角线以分割信息：
 ```typst
 #table(
   columns: 2,
@@ -85,20 +86,39 @@
 ⚠️ 提示：对角线的尺寸需要随单元格大小动态调整，某些场景可能需要额外的布局技巧。
 
 ## 单元格对齐
-问题：实现左/中/右对齐，以及等宽列的控制。
+
+通过 `align` 参数控制表格单元格的对齐方式：
+
 ```typst
-文本左对齐#h(1fr)文本居中#h(1fr)文本右对齐
+// 按列指定对齐
+#table(
+  columns: 3,
+  align: (left, center, right),
+  [左对齐], [居中], [右对齐],
+  [A], [B], [C],
+)
 
-左#h(1fr)居中#h(1fr)右对齐
+// 按函数动态对齐（根据行列位置）
+#table(
+  columns: 3,
+  align: (x, y) => if y == 0 { center } else { left },
+  [*标题1*], [*标题2*], [*标题3*],
+  [数据], [数据], [数据],
+)
 
-#place[左#h(1fr)右对齐]#align(center)[居中]
+// 单个单元格对齐
+#table(
+  columns: 2,
+  table.cell(align: center)[居中],
+  [默认],
+  [A], [B],
+)
 ```
-- 说明：结合 h(1fr) 和 place/align 可实现灵活对齐。
 
 ## 圆角表格
-问题：需要圆角外观的表格。
+需要圆角外观的表格：
 ```typst
--- #set page(width: 10cm, height: auto)
+#set page(width: 10cm, height: auto)
 #let stroke = stroke(2pt + gradient.linear(..color.map.plasma))
 #show table: it => block(stroke: stroke, radius: 2em, clip: true, it)
 
@@ -124,7 +144,7 @@
 - 说明：通过圆角块与 clip 设置实现圆角外观，表格内部对齐通过自定义 align 来实现。
 
 ## 自动列宽
-问题：列宽根据内容自适应。
+列宽根据内容自适应：
 ```typst
 #let choices(..the-choices, gutter: 1em) = layout(available => {
   let cell-width = calc.max(..the-choices.pos().map(it => measure(it).width))
@@ -153,7 +173,7 @@
 ⚠️ 提示：通过 layout/grid 机制实现自适应列宽，避免固定宽度造成内容裁切。
 
 ## 数组转置
-问题：将数据矩阵转置以适配表格输出。
+将数据矩阵转置以适配表格输出：
 ```typst
 #show: columns.with(2)
 #let data = range(8).map(x => [#x]).chunks(4) // 2x4 矩阵

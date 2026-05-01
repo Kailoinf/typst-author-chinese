@@ -58,7 +58,7 @@ $ h(x) $
 
 ## 中文字体
 
-公式中默认使用楷体显示中文。Typst 0.13+ 可通过 `covers` 精确控制：
+公式中中文的显示取决于系统可用字体和 math font 的 fallback 规则。Typst 0.13+ 可通过 `covers` 精确控制：
 ```typst
 #show math.equation: set text(font: (
   (name: "New Computer Modern Math", covers: "latin-in-cjk"),
