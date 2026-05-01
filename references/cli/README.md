@@ -1,6 +1,6 @@
 # Typst CLI 参考
 
-基于 Typst 0.14.2。所有命令均可通过 `typst help <command>` 查看最新帮助。
+基于 Typst 0.14.x（以实际安装版本为准）。所有命令均可通过 `typst help <command>` 查看最新帮助。
 
 ## 用法
 

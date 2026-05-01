@@ -95,7 +95,7 @@
 
 #set page(paper: "a4", margin: (top: 37mm, bottom: 35mm, left: 28mm, right: 26mm))
 #set text(font: "FangSong", size: zh("三号"))
-#set par(first-line-indent: (amount: 2em, all: true), justify: true, leading: 0.75em)
+#set par(first-line-indent: (amount: 2em, all: true), justify: true, leading: 1.75em)
 
 #show heading: set text(font: "Source Han Sans")
 #show heading.where(level: 1): set text(size: zh("二号"), weight: "bold")
@@ -110,11 +110,11 @@
 
 #set page(paper: "a4", margin: (top: 37mm, bottom: 35mm, left: 28mm, right: 26mm))
 #set text(font: "FangSong", size: 16pt)
-#set par(first-line-indent: (amount: 2em, all: true), justify: true, leading: 0.75em)
+#set par(first-line-indent: (amount: 2em, all: true), justify: true, leading: 1.75em)
 
 #show heading: set text(font: "Source Han Sans")
 #show heading.where(level: 1): set text(size: 22pt, weight: "bold")
 #set page(numbering: "1")
 ```
 
-国标公文正文用三号仿宋，行高固定 28pt。
+国标公文正文用三号仿宋，行高固定 28pt（`leading: 1.75em`，三号 = 16pt，16 × 1.75 ≈ 28pt）。

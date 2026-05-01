@@ -5,8 +5,8 @@ description: 生成符合中文排版习惯的 Typst（.typ）代码，编辑、
 
 # typst-author-chinese skill
 
-**本文件只包含了Typst的最基本操作，请按需阅读文Skill中的其他文件**
-**其他文件优先级：references > docs，references是常见问题，精但少，docs是Typst官方文档，浪费Token）**
+**本文件只包含了 Typst 的最基本操作，请按需阅读本 Skill 中的其他文件。**
+**其他文件优先级：references > docs。references 是中文排版常见问题的精简参考；docs 是 Typst 官方文档，内容全面但较长，按需查阅。**
 
 ## 最小中文文档
 
@@ -30,6 +30,7 @@ description: 生成符合中文排版习惯的 Typst（.typ）代码，编辑、
 2. **语法熟悉**：对照 [docs/reference/syntax.md](docs/reference/syntax.md) 和 [docs/reference/scripting.md](docs/reference/scripting.md) 确认语法
 3. **样式配置**：参考 [docs/reference/styling.md](docs/reference/styling.md) 完成全局样式，参考 [docs/guides/page-setup.md](docs/guides/page-setup.md) 调整页面设置
 4. **中文排版**：查阅 [references/README.md](references/README.md) 索引，按需深入具体章节
+5. **查不到时**：查阅 [references/docs-index.md](references/docs-index.md) 定位官方文档中对应的函数/指南
 
 ### CLI 命令参考
 
@@ -40,10 +41,10 @@ description: 生成符合中文排版习惯的 Typst（.typ）代码，编辑、
 1. **语言**：`#set text(lang: "zh")` — 开启标点挤压和中文断行
 2. **字体**：优先使用：宋体 `SimSun`/`Source Han Serif`，黑体 `SimHei`/`Source Han Sans`，楷体 `KaiTi`，西文 `Times New Roman`/`New Computer Modern`，如果遇到报错，执行 `typst fonts` 确认可用字体。
 3. **首行缩进**：`#set par(first-line-indent: (amount: 2em, all: true))` — `all: true` 确保标题后首段也缩进
-4. **行距段距**：`#set par(leading: 0.75em, spacing: 1em)` **段间距 > 行间距 > 字间距**
+4. **行距段距**：推荐使用 Typst 默认值，无需显式设置。如有特殊需求（如设置 1.25 倍行距），参考 [references/spacing.md](references/spacing.md)
 5. **常用包**：`cuti` 0.4.0（伪粗体）、`pointless-size` 0.1.2（中文字号）
 
-→ 详细用法和完整模板请查阅 [references/README.md](references/README.md)
+→ 详细用法和完整模板请查阅 [references/README.md](references/README.md)。references 中未覆盖的函数请查阅 [references/docs-index.md](references/docs-index.md)。
 
 ## 操作规范
 
@@ -90,15 +91,15 @@ echo '#metadata(1 + 2) <probe>' | typst query - "<probe>" --field value --one
 - 忘记 `lang: "zh"` 或 `first-line-indent: (amount: 2em, all: true)`
 - 在Typst中错误使用`---`作为分隔线
 - 在Typst中错误使用`>`作为引用
-- 导入第三方包使用`#import "@preview/pointless-size:0.1.2": zh, zihao`
-- `(name: "Times New Roman", covers: "latin-in-cjk")`中错把`"Times New Roman"`部分写出一个数组，而非一个字体
+- 导入第三方包时误用标记语法而非代码语法（正确写法：`#import "@preview/pointless-size:0.1.2": zh, zihao`）
+- `(name: "Times New Roman", covers: "latin-in-cjk")` 中错把 `"Times New Roman"` 部分写成一个数组，而非一个字体名字符串
 - 把`(name: "Times New Roman", covers: "latin-in-cjk")`错误写成`("Times New Roman", covers: "latin-in-cjk")`
 - margin错误使用`(2.5cm, 2.5cm, 2.5cm, 2.5cm)`而不是`(top: 2.5cm, bottom: 3cm, left: 2.5cm, right: 2.5cm)`
 - 超链接错误使用`[xxx](https://xxx)`而不是`#link("https://xxx")[xxx]`
 
 ## 高级功能
 
-- 文档标题：`#title[标题]`
+- 文档标题：`#title[标题]`（`#title()` 无参数时需先 `#set document(title: ...)`）
 - 上下文：`context { ... }` — 页眉页脚、计数器
 - 目录：`#outline(title: [目录], indent: auto)`
 - 日期：`datetime.today().display("[year]年[month]月[day]日")`

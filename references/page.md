@@ -9,7 +9,7 @@ Typst 内置 `numbering()` 支持多种计数符号：`1` `a` `A` `i` `I` `一` 
 
 ## 自定义页码
 
-自定义页脚显示"第 X 页/共 N 页"：
+自定义页脚显示"第 X 页"：
 
 ```typst
 #set page(
@@ -20,12 +20,18 @@ Typst 内置 `numbering()` 支持多种计数符号：`1` `a` `A` `i` `I` `一` 
 )
 ```
 
-显示总页数：
+显示总页数（使用页面编号模式）：
+
+```typst
+#set page(numbering: "1 / 1")
+```
+
+或者手动在页脚中显示：
 
 ```typst
 #set page(
   footer: context [
-    第 #counter(page).display("1") 页 / 共 #counter(page).final(heading: true).first() 页
+    第 #counter(page).display("1") 页 / 共 #counter(page).final().first() 页
   ],
 )
 ```
@@ -66,7 +72,7 @@ Typst 内置 `numbering()` 支持多种计数符号：`1` `a` `A` `i` `I` `一` 
 ```typst
 #show ref: it => {
   if query(it.target).len() == 0 {
-    return text(fill: red, "<未找到引用" + str(it.target) + ">")
+    return text(fill: red, "<未找到引用 " + str(it.target.key) + ">")
   }
   it
 }
