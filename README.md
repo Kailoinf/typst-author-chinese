@@ -46,22 +46,37 @@ typst compile <file.typ>
 ```
 typst-author-chinese/
 ├── SKILL.md              # skill 入口文件
-├── CLAUDE.md             # Claude Code 开发指南
+├── README.md             # 项目说明
 ├── docs/                 # Typst 官方参考文档（只读）
 │   ├── tutorial/         # 教程
 │   ├── guides/           # 指南（页面设置、表格等）
 │   └── reference/        # API 参考
 └── references/           # 中文排版参考（可编辑）
+    ├── README.md         # 索引
     ├── font.md           # 字体配置
+    ├── font-size.md      # 中文字号规范
     ├── spacing.md        # 行距段距
+    ├── margins.md        # 边距配置
     ├── first-line-indent.md
     ├── heading-numbering.md
+    ├── underline.md      # 下划线
     ├── table.md
     ├── math.md
     ├── figure.md
     ├── page.md
     ├── list.md
-    └── bibliography.md
+    ├── bibliography.md
+    ├── templates.md      # 可套用模板
+    └── cli/              # Typst CLI 命令参考
+        ├── README.md
+        ├── compile.md
+        ├── watch.md
+        ├── init.md
+        ├── query.md
+        ├── fonts.md
+        ├── update.md
+        ├── completions.md
+        └── info.md
 ```
 
 ## 致谢

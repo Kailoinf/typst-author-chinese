@@ -61,7 +61,7 @@
 ```typst
 #show ref: it => {
   if query(it.target).len() == 0 {
-    return text(fill: red, "<未找到引用" + str(it.target) + ">")
+    return text(fill: red, "<未找到引用 " + str(it.target.key) + ">")
   }
   it
 }

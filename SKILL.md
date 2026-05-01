@@ -5,8 +5,8 @@ description: 生成符合中文排版习惯的 Typst（.typ）代码，编辑、
 
 # typst-author-chinese skill
 
-**本文件只包含了Typst的最基本操作，请按需阅读文Skill中的其他文件**
-**其他文件优先级：references > docs，references是常见问题，精但少，docs是Typst官方文档，浪费Token）**
+**本文件只包含了 Typst 的最基本操作，请按需阅读本 Skill 中的其他文件。**
+**其他文件优先级：references > docs。references 是中文排版常见问题的精简参考；docs 是 Typst 官方文档，内容全面但较长，按需查阅。**
 
 ## 最小中文文档
 
@@ -15,8 +15,6 @@ description: 生成符合中文排版习惯的 Typst（.typ）代码，编辑、
 #set page(numbering: "1")
 #set text(lang: "zh", font: ((name: "Times New Roman", covers: "latin-in-cjk"),"SimSun"))
 #set par(first-line-indent: (amount: 2em, all: true), justify: true)
-#title[我的文档]
-
 = 第一章
 这是一段中文正文。Typst 对中文排版有良好的原生支持。
 
@@ -90,15 +88,15 @@ echo '#metadata(1 + 2) <probe>' | typst query - "<probe>" --field value --one
 - 忘记 `lang: "zh"` 或 `first-line-indent: (amount: 2em, all: true)`
 - 在Typst中错误使用`---`作为分隔线
 - 在Typst中错误使用`>`作为引用
-- 导入第三方包使用`#import "@preview/pointless-size:0.1.2": zh, zihao`
-- `(name: "Times New Roman", covers: "latin-in-cjk")`中错把`"Times New Roman"`部分写出一个数组，而非一个字体
+- 导入第三方包时误用标记语法而非代码语法（正确写法：`#import "@preview/pointless-size:0.1.2": zh, zihao`）
+- `(name: "Times New Roman", covers: "latin-in-cjk")` 中错把 `"Times New Roman"` 部分写成一个数组，而非一个字体名字符串
 - 把`(name: "Times New Roman", covers: "latin-in-cjk")`错误写成`("Times New Roman", covers: "latin-in-cjk")`
 - margin错误使用`(2.5cm, 2.5cm, 2.5cm, 2.5cm)`而不是`(top: 2.5cm, bottom: 3cm, left: 2.5cm, right: 2.5cm)`
 - 超链接错误使用`[xxx](https://xxx)`而不是`#link("https://xxx")[xxx]`
 
 ## 高级功能
 
-- 文档标题：`#title[标题]`
+- 文档标题：`#heading(level: 1)[标题]` 或直接 `= 标题`
 - 上下文：`context { ... }` — 页眉页脚、计数器
 - 目录：`#outline(title: [目录], indent: auto)`
 - 日期：`datetime.today().display("[year]年[month]月[day]日")`

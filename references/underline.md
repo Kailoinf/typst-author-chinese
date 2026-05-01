@@ -22,9 +22,9 @@
 `#underline[     ]` 不产生下划线（空格被合并）。用 `box`：
 
 ```typst
-// 空白下划线
-#let uline(width) = box(width: width, stroke: (bottom: 0.5pt))
-空空#uline(2em)如也
+// 空白下划线（无内容）
+#let blank-uline(width) = box(width: width, stroke: (bottom: 0.5pt))
+空空#blank-uline(2em)如也
 
 // 带内容的下划线
 #let uline(width, body) = box(align(center, body), width: width, stroke: (bottom: 0.5pt))
