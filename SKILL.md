@@ -99,7 +99,7 @@ echo '#metadata(1 + 2) <probe>' | typst query - "<probe>" --field value --one
 
 ## 高级功能
 
-- 文档标题：`#title[标题]`（需先 `#set document(title: ...)` 设置标题）
+- 文档标题：`#title[标题]`（`#title()` 无参数时需先 `#set document(title: ...)`）
 - 上下文：`context { ... }` — 页眉页脚、计数器
 - 目录：`#outline(title: [目录], indent: auto)`
 - 日期：`datetime.today().display("[year]年[month]月[day]日")`

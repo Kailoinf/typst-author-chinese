@@ -27,7 +27,7 @@
 空空#blank-uline(2em)如也
 
 // 带内容的下划线
-#let uline(width, body) = box(align(center, body), width: width, stroke: (bottom: 0.5pt))
+#let uline(width, body) = box(width: width, stroke: (bottom: 0.5pt), align(center, body))
 日期：#uline(3em)[2025]年#uline(1em)[6]月
 ```
 

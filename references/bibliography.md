@@ -52,7 +52,7 @@
 
 ## "et al." / "等" 语言
 
-`#set text(lang: "zh")` 会自动将 "et al." 显示为 "等"。确保设置了 `lang: "zh"`。
+使用中文 CSL 样式（如 `gb-7714-2015-numeric`）配合 `#set text(lang: "zh")` 通常会将 "et al." 显示为 "等"，具体行为取决于 CSL 样式。
 
 ## 缺失引用处理
 

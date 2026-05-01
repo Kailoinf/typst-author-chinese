@@ -60,9 +60,9 @@
 #show heading.where(level: 1): set text(tracking: 1.5pt)
 ```
 
-## 分散对齐
+## 字距加宽
 
-在字符间插入等宽空隙，适合短标题：
+在字符间均匀插入空隙（`tracking`），适合短标题。注意：这不是真正的"分散对齐"（后者需根据行宽动态调整间距），而是固定宽度的字距加宽：
 
 ```typst
 #set text(tracking: 2pt)

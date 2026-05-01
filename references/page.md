@@ -20,12 +20,18 @@ Typst 内置 `numbering()` 支持多种计数符号：`1` `a` `A` `i` `I` `一` 
 )
 ```
 
-显示总页数：
+显示总页数（使用页面编号模式）：
+
+```typst
+#set page(numbering: "1 / 1")
+```
+
+或者手动在页脚中显示：
 
 ```typst
 #set page(
   footer: context [
-    第 #counter(page).display("1") 页 / 共 #counter(page).final(heading: true).first() 页
+    第 #counter(page).display("1") 页 / 共 #counter(page).final().first() 页
   ],
 )
 ```
