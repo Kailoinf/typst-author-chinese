@@ -15,6 +15,8 @@ description: 生成符合中文排版习惯的 Typst（.typ）代码，编辑、
 #set page(numbering: "1")
 #set text(lang: "zh", font: ((name: "Times New Roman", covers: "latin-in-cjk"),"SimSun"))
 #set par(first-line-indent: (amount: 2em, all: true), justify: true)
+#title[我的文档]
+
 = 第一章
 这是一段中文正文。Typst 对中文排版有良好的原生支持。
 
@@ -28,6 +30,7 @@ description: 生成符合中文排版习惯的 Typst（.typ）代码，编辑、
 2. **语法熟悉**：对照 [docs/reference/syntax.md](docs/reference/syntax.md) 和 [docs/reference/scripting.md](docs/reference/scripting.md) 确认语法
 3. **样式配置**：参考 [docs/reference/styling.md](docs/reference/styling.md) 完成全局样式，参考 [docs/guides/page-setup.md](docs/guides/page-setup.md) 调整页面设置
 4. **中文排版**：查阅 [references/README.md](references/README.md) 索引，按需深入具体章节
+5. **查不到时**：查阅 [references/docs-index.md](references/docs-index.md) 定位官方文档中对应的函数/指南
 
 ### CLI 命令参考
 
@@ -41,7 +44,7 @@ description: 生成符合中文排版习惯的 Typst（.typ）代码，编辑、
 4. **行距段距**：`#set par(leading: 0.75em, spacing: 1em)` **段间距 > 行间距 > 字间距**
 5. **常用包**：`cuti` 0.4.0（伪粗体）、`pointless-size` 0.1.2（中文字号）
 
-→ 详细用法和完整模板请查阅 [references/README.md](references/README.md)
+→ 详细用法和完整模板请查阅 [references/README.md](references/README.md)。references 中未覆盖的函数请查阅 [references/docs-index.md](references/docs-index.md)。
 
 ## 操作规范
 
@@ -96,7 +99,7 @@ echo '#metadata(1 + 2) <probe>' | typst query - "<probe>" --field value --one
 
 ## 高级功能
 
-- 文档标题：`#heading(level: 1)[标题]` 或直接 `= 标题`
+- 文档标题：`#title[标题]`（需先 `#set document(title: ...)` 设置标题）
 - 上下文：`context { ... }` — 页眉页脚、计数器
 - 目录：`#outline(title: [目录], indent: auto)`
 - 日期：`datetime.today().display("[year]年[month]月[day]日")`

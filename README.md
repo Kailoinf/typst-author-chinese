@@ -67,6 +67,7 @@ typst-author-chinese/
     ├── list.md
     ├── bibliography.md
     ├── templates.md      # 可套用模板
+    ├── docs-index.md     # Typst 官方文档索引
     └── cli/              # Typst CLI 命令参考
         ├── README.md
         ├── compile.md
