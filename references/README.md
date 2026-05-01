@@ -36,3 +36,4 @@
 | 文件 | 主题 |
 |------|------|
 | [templates.md](templates.md) | 3 套可直接套用的模板（毕业论文/办公方案/国标公文） |
+\n\n> Automatically updated by apply_fix.sh for issue #17 (2026-05-02 00:21:02)
