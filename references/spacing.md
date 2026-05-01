@@ -37,7 +37,7 @@
 段间距 > 行高，清晰区分段落。不要用空行控制段距。
 
 ```typst
-#set par(spacing: 0.75em)
+#set par(spacing: 1.2em)
 // 标题段前段后距
 #show heading.where(level: 1): set block(above: 24pt, below: 18pt)
 #show heading.where(level: 2): set block(above: 12pt, below: 6pt)
